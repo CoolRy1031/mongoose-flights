@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/movies/index.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
+    <label for="airline-input">Airline:</label>
+    <input type="test" name="airline" value="<%= flight.airline %> "  id="airline-input" required>
+    <label for="airport-input">Airport:</label>
+    <input type="text" name="airport" value="<%= flight.airport %>" id="airport-input" default value="DEN">
+    <label for="flight-No-select">Flight No:</label>
+    <input type="text" name="flightNo" value="<%= flight.flightNo %>" id="flight-No-input">
+    <label for="date-input">Date:</label>
+    <input type="datetime-local" name="departs" value=" <%= flight.Date %>" id="departs-input">
+    <button type="submit">Update Flight</button>
+  </form>
+</main>
+
+
+<%- include('../partials/footer') %>
