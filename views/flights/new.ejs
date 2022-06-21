@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/movies/new.css">
+<link rel="stylesheet" href="/stylesheets/flights/new.css">
 <%- include('../partials/nav') %>
 
 <main>
@@ -21,7 +21,7 @@
       <option value="ATL">ATL</option>
     </select>
     <label for="flight-No-select">Flight No:</label>
-    <input type="text" name="flightNo" id="flight-No-input" value="10-9999">
+    <input type="text" name="flightNo" id="flight-No-input">
     <label for="date-input">Date:</label>
     <input type="datetime-local" name="departs" value="<%= departsDate %>"  id="departs-input">
     <button type="submit">Add Flights</button>
