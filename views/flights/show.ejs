@@ -6,17 +6,17 @@
   <h1><%= title %></h1>
   <h2><%= flight.flightNo %> </h2>
     <tbody>
-        <tr>
+        <div>
           <td>Airline:</td>
-          <td><%= flight.airline %>  /  </td>
+          <td><%= flight.airline %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td>Airport:</td>
-          <td><%= flight.airport %>  /  </td>
+          <td><%= flight.airport %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td>Departs:</td> 
           <td><%= flight.departs %></td>
           <td></td>
-        </tr>
+        </div>
       </tbody>
-      <div>Food:</div>
+      <span>Food:</span>
       <ul>
         <% flight.food.forEach(foodProduct => { %>
           <li><%= foodProduct.name %></li>
