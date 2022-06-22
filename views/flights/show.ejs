@@ -5,7 +5,6 @@
 <main>
   <h1><%= title %></h1>
   <h2><%= flight.flightNo %> </h2>
-  <section>
     <tbody>
         <tr>
           <td>Airline:</td>
@@ -17,7 +16,21 @@
           <td></td>
         </tr>
       </tbody>
-  </section>
+      <div>Food:</div>
+      <ul>
+        <% flight.food.forEach(foodProduct => { %>
+          <li><%= foodProduct.name %></li>
+        <% }) %>
+      </ul>
+    </section>
+    <form id="add-per-to-food" action="/flights/<%= flight._id %>/meals " method="POST">
+      <select name="mealId">
+        <% meals.forEach(meal => { %>
+          <option value="<%= meal._id %>"><%= meal.name %></option>
+        <% }) %>
+      </select>
+      <button type="submit">Add Meal</button>
+    </form>
   <section>
     <form
       id="add-ticket-form"
@@ -41,7 +54,7 @@
         </tr>
       </thead>
       <tbody>
-        <% flight.tickets.forEach(function(ticket) { %>
+        <% flight.tickets.forEach(ticket =>  { %>
           <tr>
             <td><%= ticket.createdAt.toLocaleDateString() %></td>
             <td><%= ticket.seat %></td>
